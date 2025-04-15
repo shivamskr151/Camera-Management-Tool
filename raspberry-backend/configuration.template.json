@@ -1,0 +1,54 @@
+{ 
+    "sensor_id":"camera1",
+    "data_time_loop":0,
+    "default_arguments":{
+        "default_video_source":"rtsp://username:password@camera_ip",
+        "hef_path":"/path/to/yolov8s_h8l.hef",
+        "hef_path_pose":"/path/to/yolov8s_pose_h8l.hef"
+    },
+    "model_details":{
+        "model_name":"yolov8s",
+        "model_path":"/yolov8s.pt",
+        "confidence":0.4
+    },
+    "available_activities": ["traffic_overspeeding"],
+    "active_activities": ["traffic_overspeeding"],
+    "websocket_url":"http://your_websocket_url:3000",
+    "kafka_variables":{ 
+        "bootstrap_servers":"your_kafka_server:9092",
+        "ai_engine_pipeline": "None",
+        "send_analytics_pipeline": "aianalytics",
+        "send_events_pipeline":"aievents",
+        "kafka_interval_for_analytics":3000,
+        "reset_threshold":3000,
+        "AWS_S3":{
+            "aws_access_key_id":"YOUR_AWS_ACCESS_KEY_ID",
+            "aws_secret_access_key":"YOUR_AWS_SECRET_ACCESS_KEY",
+            "region_name":"your-region",
+            "BUCKET_NAME":"your-bucket-name"
+        }
+    },
+    "service_settings": {
+        "aws_iot": {
+            "mqtt_broker": "your_mqtt_broker",
+            "mqtt_port": 8883,
+            "use_tls": false,
+            "username": "your_mqtt_username",
+            "password": "your_mqtt_password"
+        },
+        "mongo_db_client": {
+            "uri": "mongodb://localhost:27017",
+            "database": "camera_management",
+            "collection": "camera_data"
+        },
+        "system": {
+            "configurations_folder_path": "config",
+            "services_to_restart": ["camera_service"],
+            "all_configuration_sufix": ".json",
+            "auto_update_interval": 300
+        },
+        "camera_details": {
+            "host": "localhost"
+        }
+    }
+} 

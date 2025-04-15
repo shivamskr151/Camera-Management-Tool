@@ -1,0 +1,310 @@
+{
+  "info": {
+    "name": "Camera Management Tool - PTZ API",
+    "description": "Collection of PTZ camera control endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Move Camera",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/move",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "move"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"pan\": 0,\n  \"tilt\": 0,\n  \"zoom\": 0,\n  \"velocity\": 100,\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create Preset",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/create-preset",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "create-preset"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"preset_name\": \"preset1\",\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Stop PTZ",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/stop-ptz",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "stop-ptz"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Test Connection",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/test",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "test"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Go To Preset",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/go-to-preset",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "go-to-preset"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"preset_name\": \"preset1\",\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Start Patrol",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/start-patrol",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "start-patrol"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"presets\": [\"preset1\", \"preset2\"],\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Stop Patrol",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/stop-patrol",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "stop-patrol"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Set FPS and Bitrate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/set-fpsbr",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "set-fpsbr"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fps\": 30,\n  \"width\": 1920,\n  \"height\": 1080,\n  \"bitrate\": 4000,\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Set Time",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/set-time",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "set-time"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"timezone\": \"UTC\",\n  \"ntp_server\": \"pool.ntp.org\",\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Update Configuration",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/update-configuration",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "update-configuration"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Start Stream",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/start-stream",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "start-stream"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rtmp_url\": \"rtmp://your-rtmp-server/live\",\n  \"stream_timer\": 3600,\n  \"streaming_fps\": 30,\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Stop Stream",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/stop-stream",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "stop-stream"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Start On-Demand Stream",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/start-on-demand-stream",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "start-on-demand-stream"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rtmp_url\": \"rtmp://your-rtmp-server/live\",\n  \"video_file\": \"video.mp4\",\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Stop On-Demand Stream",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/ptz/stop-on-demand-stream",
+          "host": ["{{base_url}}"],
+          "path": ["ptz", "stop-on-demand-stream"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sensor_id\": \"your_sensor_id\"\n}"
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+} 
